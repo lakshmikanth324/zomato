@@ -1,0 +1,7 @@
+mport com.fasterxml.jackson.databind.{ObjectMapper, JsonNode}
+JsonNode beforeNode = jacksonObjectMapper.readTree(beforeJsonString);
+JsonNode afterNode = jacksonObjectMapper.readTree(afterJsonString);
+
+import com.flipkart.zjsonpatch.JsonDiff
+JsonNode patch = JsonDiff.asJson(beforeNode, afterNode);
+String diffs = patch.toString();
